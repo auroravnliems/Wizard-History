@@ -1,0 +1,45 @@
+# =====================================================
+#   WizardHistory – Addon for WizardCommand
+# =====================================================
+
+# Maximum number of entries in the rolling history per player.
+# All-time counters (%wizhistory_alltime_*%) are NEVER trimmed.
+# Set -1 for unlimited rolling history.
+max-history: 200
+
+# Date/time format for time-related placeholders.
+date-format: "yyyy/MM/dd HH:mm"
+
+# -------------------------------------------------------
+# DISPLAY NAMES – display names that replace real command names
+#
+# Priority order when resolving a display name:
+#   1. "display-name:" field in the WizardCommand file  ← HIGHEST PRIORITY
+#   2. "display-names" section in this config (below)   ← fallback
+#   3. Raw command file name                             ← default
+#
+# Recommended: set "display-name" directly in the WizardCommand file.
+# See example below.
+# -------------------------------------------------------
+display-names:
+# Fallback if the command file does not have a display-name field
+# example: "Standard Wish"
+
+# Only track these commands (leave empty to track all)
+track-only: []
+
+# Never track these commands
+ignore-commands:
+  - reload
+
+storage-type: yaml
+
+messages:
+  prefix: "&8[&bWizHistory&8] "
+  reload: "&aConfiguration reloaded."
+  history-cleared: "&aHistory for &e%player% &ahas been cleared."
+  no-history: "&7No history found."
+  page-header: "&b-- History of &e%player% &b(Page %page%/%max%) --"
+  page-entry: "&7%index%. &f%display_name% &8| &7%time%"
+  no-permission: "&cYou do not have permission."
+  player-not-found: "&cPlayer not found."

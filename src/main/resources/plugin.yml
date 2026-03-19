@@ -1,0 +1,24 @@
+name: WizardHistory
+version: '${project.version}'
+main: com.aurora.wizhistory.WizardHistory
+api-version: '1.21'
+description: Addon for WizardCommand – gacha-style history tracker with PlaceholderAPI
+author: Aurora_VN
+
+softdepend:
+  - PlaceholderAPI
+  - WizardCommand
+
+commands:
+  wizhistory:
+    description: WizardHistory management commands
+    usage: /wizhistory [reload|clear <player>|view <player>]
+    permission: wizhistory.admin
+
+permissions:
+  wizhistory.admin:
+    description: Allows managing WizardHistory
+    default: op
+  wizhistory.view.self:
+    description: Allows viewing own command history
+    default: true
